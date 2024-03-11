@@ -28,7 +28,6 @@ public class Main {
             System.out.println(fat.getId() + " --> " + fat.getTotalFatura());
         }
 
-
 /*
         EntityManagerFactory factory = Persistence.createEntityManagerFactory("default");
         EntityManager em = factory.createEntityManager();

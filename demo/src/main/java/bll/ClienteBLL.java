@@ -26,7 +26,7 @@ public class ClienteBLL {
         transaction.begin();
         em.remove(cli);
         transaction.commit();
-    }
+    } 
 
     public static Cliente findCliente(long id){
         return em.find(Cliente.class, id);
