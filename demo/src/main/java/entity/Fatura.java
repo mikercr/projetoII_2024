@@ -4,8 +4,6 @@ import jakarta.persistence.*;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
-import java.util.LinkedHashSet;
-import java.util.Set;
 
 @Entity
 @Table(name = "\"Fatura\"")
@@ -23,7 +21,6 @@ public class Fatura {
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "\"IdCliente\"", nullable = false)
     private Cliente idCliente;
-
 
     public Long getId() {
         return id;

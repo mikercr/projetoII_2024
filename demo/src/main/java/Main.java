@@ -1,13 +1,11 @@
 import bll.ClienteBLL;
-import entity.Cliente;
+import bll.FaturaBLL;
 import entity.Fatura;
-import jakarta.persistence.*;
-import jakarta.persistence.criteria.CriteriaBuilder;
-import jakarta.persistence.metamodel.Metamodel;
-import jakarta.transaction.Transaction;
+import entity.Cliente;
 
-import java.util.List;
-import java.util.Map;
+import java.math.BigDecimal;
+import java.time.LocalDate;
+import java.util.Date;
 
 public class Main {
 
@@ -23,6 +21,11 @@ public class Main {
 */
         Cliente cli = ClienteBLL.findCliente(10);
         System.out.println(cli.getName());
+        Fatura fatura = new Fatura();
+        fatura.setId(123L);
+        fatura.setDataFatura(LocalDate.now());
+        fatura.setTotalFatura(new BigDecimal(123));
+        FaturaBLL.criarFatura(cli, fatura);
 
         for(Fatura fat : cli.getFaturas()){
             System.out.println(fat.getId() + " --> " + fat.getTotalFatura());
